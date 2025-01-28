@@ -1,0 +1,375 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+}
+#nav{
+    height: 140px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 150px;
+    gap:50px;
+    position: fixed;
+    z-index: 9;
+}
+#nav img{
+    height:70px
+}
+#nav h4{
+    text-transform: uppercase;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #95c11e;
+    position:fixed;
+    z-index: 9;
+}
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: #96c11e36;
+    position:fixed;
+    filter: blur(40px);
+    z-index: 99;
+    pointer-events: none;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0,0, 0.45);
+   
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 h1{
+    font-size: 120px;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    top: -5px;
+    left: -5px;
+    -webkit-text-stroke: 1.5px #95c11e;
+    z-index: -1;
+  }
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 43%;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller1{
+    display: inline-block;
+    white-space: nowrap;   
+    animation-name: scrol;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 100px;
+    font-weight: 900px;
+    font-family: gilroy;
+    margin-right: 15px;
+    color: transparent;
+    -webkit-text-stroke: 2px #95c11e;
+    transition: all linear 0.4s;
+}
+#scroller h4:hover{
+    color: #95c11e;
+}
+@keyframes scrol {
+    from{
+    transform:translateX(0)
+}
+to{
+    transform: translateX(-100%);
+}
+}
+#aboutus img{
+    width: 200px;
+    height:200px;
+    border-radius: 20%;
+    object-fit: cover;
+    /* flex-shrink: 0; */
+}
+#aboutus{
+    height: 40vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 100px; 
+    gap: 20px; 
+    justify-content: space-between;
+    position: relative;
+    z-index: 120;
+}
+#about{
+    width: 50%;
+    text-align: center;
+}
+#about h1{
+    font-size: 56px;
+    font-weight: 800px;
+    margin-bottom: 30px;
+}
+#about p{
+    font-size: 20px;
+    line-height: 26x;
+
+}
+#card-conatnir{
+    /* background-color: red; */
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 110;
+}
+.card{
+height: 80%;
+width: 20%;
+/* background-color:blue; */
+border-radius: 15px;
+background-size: cover;
+background-position: center;
+}
+#card1{
+    background-image: url(home-toptracer.avif);
+}
+#card2{
+    background-image: url(hero-4-1024x1024.jpg);
+}
+#card3{
+    background-image: url(home-lessons.avif);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    padding-top: 140px;
+    padding: 50px;
+    opacity: 0;
+    transition: all ease 0.7s;
+
+}
+.overlay h4 {
+    color: #000;
+    font-size: 27px;
+    padding-bottom: 17px;
+    font-weight: 800px;
+}
+.overlay p {
+    color: #000;
+    font-size: 20px;
+}
+.card:hover .overlay{
+opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+#green{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom,#119f3a, #ace022);
+}
+#green img{
+    height: 100%;
+    object-fit: cover;
+    width:13%;
+}
+#green h4{
+    width: 45%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 27px;
+    text-transform: uppercase;
+    color: #000;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3 p{
+    font-size: 30px;
+    font-weight: 700px;
+    width: 55%;
+    text-align: center;
+    line-height: 50px;
+}
+#page3 img{
+    position: absolute;
+    height: 68px;
+}
+#page3 #colon1{
+    left:15%;
+    top:25%;
+}
+#page3 #colon2{
+    right:15%;
+    bottom:30%;
+}
+#page4{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:80px;
+    position: relative;
+}
+.elem{
+    height: 70%;
+    width:26%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800px;
+    color: #000;
+    font-size: 35px;
+    position: absolute;
+    z-index: 110;
+    transition: all ease 0.8s;
+}
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.elem:hover h2{
+    color: white;
+    background-color: transparent;
+}
+.elem:hover img{
+    scale:1.1
+}
+#page4 h1{
+    font-size: 91px;
+    position: absolute;
+    top:-18%;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
+} 
+#fotter {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6.5vw; 
+     padding: 0 100px; 
+     line-height: 30px;
+  }
+  #fotter img{
+    position: absolute;
+    width:20%;
+    left:0;
+    height:100%;
+  }
+  #f1 img{
+    height:140px;
+    top:70px;
+    left:80px
+  }
+  #f2 h3 {
+    font-size: 1.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  
+  #f3 h3 {
+    font-size: 1.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  #f4 h4 {
+    font-size: 1vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
